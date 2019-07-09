@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>SR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_app.css' )}}">
+</head>
+<body>
+    <h1 align="center">超分辨率样例展示</h1>
+    <form action="http://localhost:5000/success/" method="post">
+        <div class="result" id="result_id">
+            <div id="orign">
+                <img src="" id="orign_id"  >
+            </div>
+            <div id="res1">
+                <img src="" id="res1_id"  >
+            </div>
+            <div id="res2">
+                <img src="" id="res2-id"  >
+            </div>
+            <div class="dianji">
+                <input type="file" id="chuantu" onchange="show_orign(this.id , 'orign_id')">
+                <i class="icon"></i>
+                <span id="wenzi">本地上传图片</span>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.0.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/ajaxfileupload.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+{
+    "graph": {
+        "_type": "graph",
+        "format": "keras",
+        "nodes": [
+            {
+                "name": "conv2d_input",
+                "id": "conv2d_input",
+                "class_name": "InputLayer",
+                "output_shape": [
+                    null,
+                    32,
+                    32,
+                    3
+                ],
+                "num_parameters": 0
+            },
+            {
+                "name": "conv2d",
+                "id": "conv2d",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    32,
+                    32,
+                    8
+                ],
+                "num_parameters": 224
+            },
+            {
+                "name": "up_sampling2d",
+                "id": "up_sampling2d",
+                "class_name": "UpSampling2D",
+                "output_shape": [
+                    null,
+                    64,
+                    64,
+                    8
+                ],
+                "num_parameters": 0
+            },
+            {
+                "name": "conv2d_1",
+                "id": "conv2d_1",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    64,
+                    64,
+                    16
+                ],
+                "num_parameters": 1168
+            },
+            {
+                "name": "up_sampling2d_1",
+                "id": "up_sampling2d_1",
+                "class_name": "UpSampling2D",
+                "output_shape": [
+                    null,
+                    128,
+                    128,
+                    16
+                ],
+                "num_parameters": 0
+            },
+            {
+                "name": "conv2d_2",
+                "id": "conv2d_2",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    128,
+                    128,
+                    32
+                ],
+                "num_parameters": 4640
+            },
+            {
+                "name": "up_sampling2d_2",
+                "id": "up_sampling2d_2",
+                "class_name": "UpSampling2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    32
+                ],
+                "num_parameters": 0
+            },
+            {
+                "name": "conv2d_3",
+                "id": "conv2d_3",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    32
+                ],
+                "num_parameters": 9248
+            },
+            {
+                "name": "conv2d_4",
+                "id": "conv2d_4",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    16
+                ],
+                "num_parameters": 4624
+            },
+            {
+                "name": "conv2d_5",
+                "id": "conv2d_5",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    8
+                ],
+                "num_parameters": 1160
+            },
+            {
+                "name": "conv2d_6",
+                "id": "conv2d_6",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    3
+                ],
+                "num_parameters": 219
+            }
+        ],
+        "edges": [
+            [
+                "conv2d_input",
+                "conv2d"
+            ],
+            [
+                "conv2d",
+                "up_sampling2d"
+            ],
+            [
+                "up_sampling2d",
+                "conv2d_1"
+            ],
+            [
+                "conv2d_1",
+                "up_sampling2d_1"
+            ],
+            [
+                "up_sampling2d_1",
+                "conv2d_2"
+            ],
+            [
+                "conv2d_2",
+                "up_sampling2d_2"
+            ],
+            [
+                "up_sampling2d_2",
+                "conv2d_3"
+            ],
+            [
+                "conv2d_3",
+                "conv2d_4"
+            ],
+            [
+                "conv2d_4",
+                "conv2d_5"
+            ],
+            [
+                "conv2d_5",
+                "conv2d_6"
+            ]
+        ]
+    },
+    "examples": {
+        "width": 768,
+        "height": 256,
+        "count": 32,
+        "_type": "images"
+    },
+    "val_perceptual_distance": 62.35417556762695,
+    "perceptual_distance": 60.27986526489258,
+    "_runtime": 71079.08963060379,
+    "epoch": 99,
+    "loss": 0.013623075183624258,
+    "_step": 99,
+    "val_loss": 0.013824295112863183,
+    "_timestamp": 1562097915.1956315
+}
