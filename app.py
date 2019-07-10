@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template,jsonify
 from datetime import timedelta
-from connector1 import interface
-
-
+from connector1 import interface as inter1
+from connector2 import interface as inter2
+from connector3 import interface as inter3
+import numpy as np
 import os
+from PIL import Image
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -27,16 +29,18 @@ def receive():
     if not os.path.exists('./static/result'):
         os.makedirs('./static/result')
     a = request.files['file']
+    b = Image.open(a)
+    b = np.array(b)
+    # print(b)
+    b = b.repeat(8, axis=0).repeat(8, axis=1)
+    b = Image.fromarray(b.astype('uint8')).convert('RGB')
+    b.save(os.path.join('./static/result', "orign.jpg"))
 
-    filename = secure_filename(a.filename)
-    a.save(os.path.join('./static/result', filename))
-    print("b")
-    # return jsonify({'filename1': interface(a),
-    #                 'filename2': "./static/result/"+filename
-    #                 })
-    return jsonify({'filename1': interface(a),
-                    'filename2': "./static/result/"+filename
+    return jsonify({'filename1':  "./static/result/"+"orign.jpg",
+                    'filename2': inter1(a),
+                    'filename3': inter3(a)
                     })
+
 
 if __name__ == '__main__':
     app.run()

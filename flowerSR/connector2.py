@@ -15,7 +15,7 @@ import wandb
 import scipy.misc
 
 def interface(img):
-    dir="./wandb/model_3/"
+    dir="./wandb/model_2/"
     model=Sequential()
     model.add(layers.Conv2D(32, (3, 3), activation='relu', padding='same',
                                 input_shape=(32, 32, 3)))

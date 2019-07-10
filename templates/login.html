@@ -9,14 +9,14 @@
     <h1 align="center">超分辨率样例展示</h1>
     <form action="http://localhost:5000/success/" method="post">
         <div class="result" id="result_id">
-            <div id="orign">
+            <div id="orign" title="原图片，分辨率为32x32，尺寸放大为256">
                 <img src="" id="orign_id"  >
             </div>
-            <div id="res1">
+            <div id="res1" title="模型1的效果图">
                 <img src="" id="res1_id"  >
             </div>
-            <div id="res2">
-                <img src="" id="res2-id"  >
+            <div id="res2" title="模型3的效果图">
+                <img src="" id="res2_id"  >
             </div>
             <div class="dianji">
                 <input type="file" id="chuantu" onchange="show_orign(this.id , 'orign_id')">

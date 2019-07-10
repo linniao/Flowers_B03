@@ -42,7 +42,7 @@ output_width = 256
 #     return model
     
 # def load_trained_model_v2():
-#     root_dir = "./wandb/model_3/"
+#     root_dir = "./wandb/model_2/"
 #
 #     model = Sequential()
 #     model.add(layers.Conv2D(32, (3, 3), activation='relu', padding='same',
@@ -58,7 +58,7 @@ output_width = 256
 #     return model
 
 def load_trained_model_v3():
-    root_dir = "./wandb/model_2/"
+    root_dir = "./wandb/model_3/"
 
     model = Sequential()
     model.add(layers.Conv2D(8, (3, 3), activation='relu', padding='same',

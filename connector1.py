@@ -18,7 +18,7 @@ import scipy.misc
 def interface(img):
     img = Image.open(img)
     dir = "./static/wandb/model_1/"
-    model=Sequential()
+    model = Sequential()
     model.add(layers.Conv2D(3, (3, 3), activation='relu', padding='same',
                                 input_shape=(32, 32, 3)))
     model.add(layers.UpSampling2D())
@@ -30,7 +30,7 @@ def interface(img):
     model.load_weights(dir + "model-best.h5")
     small_image = np.zeros((1, 32, 32, 3))
     small_image[0] = np.array(img) / 255.0
-    print(small_image)
+    # print(small_image)
     pred = model.predict(small_image)
     for i, o in enumerate(pred):
         img = np.concatenate([o * 255], axis=1)

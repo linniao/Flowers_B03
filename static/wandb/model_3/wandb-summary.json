@@ -23,9 +23,9 @@
                     null,
                     32,
                     32,
-                    32
+                    8
                 ],
-                "num_parameters": 896
+                "num_parameters": 224
             },
             {
                 "name": "up_sampling2d",
@@ -35,7 +35,7 @@
                     null,
                     64,
                     64,
-                    32
+                    8
                 ],
                 "num_parameters": 0
             },
@@ -49,7 +49,7 @@
                     64,
                     16
                 ],
-                "num_parameters": 4624
+                "num_parameters": 1168
             },
             {
                 "name": "up_sampling2d_1",
@@ -71,9 +71,9 @@
                     null,
                     128,
                     128,
-                    8
+                    32
                 ],
-                "num_parameters": 1160
+                "num_parameters": 4640
             },
             {
                 "name": "up_sampling2d_2",
@@ -83,13 +83,49 @@
                     null,
                     256,
                     256,
-                    8
+                    32
                 ],
                 "num_parameters": 0
             },
             {
                 "name": "conv2d_3",
                 "id": "conv2d_3",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    32
+                ],
+                "num_parameters": 9248
+            },
+            {
+                "name": "conv2d_4",
+                "id": "conv2d_4",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    16
+                ],
+                "num_parameters": 4624
+            },
+            {
+                "name": "conv2d_5",
+                "id": "conv2d_5",
+                "class_name": "Conv2D",
+                "output_shape": [
+                    null,
+                    256,
+                    256,
+                    8
+                ],
+                "num_parameters": 1160
+            },
+            {
+                "name": "conv2d_6",
+                "id": "conv2d_6",
                 "class_name": "Conv2D",
                 "output_shape": [
                     null,
@@ -128,21 +164,33 @@
             [
                 "up_sampling2d_2",
                 "conv2d_3"
+            ],
+            [
+                "conv2d_3",
+                "conv2d_4"
+            ],
+            [
+                "conv2d_4",
+                "conv2d_5"
+            ],
+            [
+                "conv2d_5",
+                "conv2d_6"
             ]
         ]
     },
-    "val_perceptual_distance": 63.56586456298828,
-    "perceptual_distance": 61.49594497680664,
     "examples": {
         "width": 768,
         "height": 256,
         "count": 32,
         "_type": "images"
     },
-    "loss": 0.014051150136555616,
+    "val_perceptual_distance": 62.35417556762695,
+    "perceptual_distance": 60.27986526489258,
+    "_runtime": 71079.08963060379,
+    "epoch": 99,
+    "loss": 0.013623075183624258,
     "_step": 99,
-    "val_loss": 0.014806296024471522,
-    "_runtime": 25046.357999801636,
-    "_timestamp": 1562575969.541,
-    "epoch": 99
+    "val_loss": 0.013824295112863183,
+    "_timestamp": 1562097915.1956315
 }
